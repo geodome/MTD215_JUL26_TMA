@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SDL2/SDL.h>
+#include <algorithm>
 
 #define TITLE "Display Rectangles"
 
@@ -14,11 +15,6 @@ public:
         return length*height;
     }
 };
-
-int max(int a, int b) {
-    if(a > b) return a;
-    return b;
-}
 
 int main() {
     int length, height;
@@ -40,9 +36,9 @@ int main() {
         return 1;
     }
     // create a blank window
-    int width= max(400, 2*length+30);
-    int height = max(400, 2*height+30);
-    SDL_Window* gWindow = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0);
+    int win_width = std::max(400, 2*length+30);
+    int win_height = std::max(400, 2*height+30);
+    SDL_Window* gWindow = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, win_width, win_height, 0);
     if(gWindow == nullptr) {
         std::cerr << SDL_GetError() << std::endl;
         SDL_Quit();
