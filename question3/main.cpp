@@ -32,6 +32,8 @@ MCQ* generate_quiz(int level, MCQ* easy, MCQ* hard) {
         return quiz;
         case 2:
         // for mediun level, half the questions are from the easy bank, and the oher half is from the hard bank.
+        // Swt every even question from the easy bank
+        // Set evry odd question from the hard bank
         for(int i=0; i<10; i++) {
             quiz[2*i] = easy[2*i + rand() % 2];
             quiz[2*i + 1] = hard[2*i + rand() % 2];
@@ -78,7 +80,7 @@ void ask_question(const MCQ& quiz) {
 bool answer_correctly(const MCQ& quiz) {
     int answer;
     std::cin >> answer;
-    if(answer - 1 == quiz.correct) {
+    if(answer == quiz.correct) {
         std::cout << "Correct answer!" << "\n";
         return true;
     }
