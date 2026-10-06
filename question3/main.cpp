@@ -32,7 +32,7 @@ MCQ* generate_quiz(int level, MCQ* easy, MCQ* hard) {
         return quiz;
         case 2:
         // for mediun level, half the questions are from the easy bank, and the oher half is from the hard bank.
-        // Swt every even question from the easy bank
+        // Set every even question from the easy bank
         // Set evry odd question from the hard bank
         for(int i=0; i<10; i++) {
             quiz[2*i] = easy[2*i + rand() % 2];
