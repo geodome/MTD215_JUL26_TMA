@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <stdexcept>
+
 
 /**
  * The struct represents a Multiple-Choice Question (MCQ) which includes
