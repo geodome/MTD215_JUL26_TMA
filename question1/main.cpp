@@ -1,6 +1,5 @@
 #include <iostream>
 #include <SDL2/SDL.h>
-#include <algorithm>
 
 #define TITLE "Display Rectangles"
 
