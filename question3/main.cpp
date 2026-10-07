@@ -106,8 +106,8 @@ int start_game(MCQ* quiz) {
 }
 
 int main() {
-    MCQ easy_bank[20] = 
-    {
+   	MCQ easy_bank[20]=
+	{
 		{
 			"What is the capital of France?", 
 			{"London", "Berlin", "Paris", "Madrid"}, 
@@ -125,7 +125,7 @@ int main() {
         {
 			"Which planet is known as the Red Planet?", 
 			{"Venus", "Mars", "Jupiter", "Saturn"}, 
-			2,
+			2, 
 		},
         {	
 			"How many days are there in a standard year?", 
@@ -140,6 +140,7 @@ int main() {
         {"What do bees collect and use to make honey?",
 			{"Nectar", "Pollen", "Sap", "Leaves"},
 			1, 
+
 		},
         {"How many sides does a triangle have?",
 			{"3", "4", "5", "6"},
@@ -149,6 +150,7 @@ int main() {
 			"What is the boiling point of water at sea level?", 
 			{"90 C", "100 C", "120 C", "80 C"}, 
 			2, 
+
 		},
         {
 			"Which animal is known as the King of the Jungle?", 
@@ -173,44 +175,142 @@ int main() {
         {
 			"Which fruit is associated with Isaac Newton?", 
 			{"Orange", "Banana", "Apple", "Grape"}, 
-			3
+			3, 
 		},
         {
 			"What is the main language spoken in Brazil?", 
 			{"Spanish", "Portuguese", "French", "English"}, 
-			2
+			2, 
 		},
         {
 			"What shape is a stop sign?", 
 			{"Hexagon", "Octagon", "Pentagon", "Circle"}, 
-			2
+			2, 
 		},
         {
 			"What is 5 multiplied by 6?", 
 			{"25", "35", "30", "40"}, 
-			3
+			3, 
 		},
         {	
 			"Which sense is associated with the nose?", 
 			{"Sight", "Touch", "Taste", "Smell"}, 
-			4
+			4, 
 		},
         {
 			"What is the hardest natural mineral?", 
 			{"Gold", "Iron", "Diamond", "Quartz"}, 
-			3
+			3, 
 		},
         {
 			"What is the chemical symbol for water?", 
 			{"H2O", "CO2", "O2", "NaCl"}, 
-			1
+			1,
 		},
 	};
 
-    MCQ difficult_bank[20] = {
+    MCQ difficult_bank[20]=
+	{
+		{
+			"What is the second most abundant element in the universe?",
+			{"Helium", "Hydrogen", "Carbon", "Oxygen"},
+			1,
+		},
         {
-
-        },
+			"Which Roman emperor made his horse a senator?",
+			{"Nero", "Caligula", "Commodus", "Claudius"},
+			2,
+		},
+        {
+			"What is the half-life of Carbon-14?",
+			{"~1,200 years", "~3,500 years", "~5,730 years", "~10,000 years"},
+			3,
+		},
+        {
+			"Which treaty ended World War I?",
+			{"Treaty of Paris", "Treaty of Versailles", "Treaty of Ghent", "Treaty of Utrecht"},
+			2,
+		},
+        {
+			"What is the SI unit of electric capacitance?",
+			{"Henry", "Farad", "Weber", "Tesla"},
+			2,
+		},
+        {
+			"Who wrote the epic poem 'Paradise Lost'?",
+			{"John Milton", "Geoffrey Chaucer", "William Blake", "Lord Byron"},
+			1,
+		},
+        {
+			"Which African country was formerly known as Abyssinia?",
+			{"Eritrea", "Ethiopia", "Sudan", "Somalia"},
+			2,
+		},
+        {
+			"What is the deepest known location on Earth?",
+			{"Puerto Rico Trench", "Java Trench", "Mariana Trench", "Tonga Trench"},
+			3,
+		},
+        {
+			"In computing, what does RISC stand for?",
+			{"Reduced Instruction Set Computer", "Rapid Instruction System Core", "Random Instruction Set Chip", "Redundant Integrated System Cache"},
+			1,
+		},
+        {
+			"Which composer wrote the 'Enigma Variations'?",
+			{"Edward Elgar", "Gustav Holst", "Benjamin Britten", "Ralph Vaughan Williams"},
+			1,
+		},
+        {
+			"What year was the fall of Constantinople?",
+			{"1453", "1492", "1204", "1389"},
+			1,
+		},
+        {
+			"Which metal is liquid at standard room temperature besides mercury?",
+			{"Gallium", "Francium", "Cesium", "Bromine"},
+			1,
+		},
+        {
+			"What is the capital of Kazakhstan?",
+			{"Almaty", "Astana", "Tashkent", "Bishkek"},
+			2,
+		},
+        {
+			"Who discovered the circulation of blood?",
+			{"William Harvey", "Andreas Vesalius", "Galen", "Edward Jenner"},
+			1,
+		},
+        {
+			"Which battle took place in 1066?",
+			{"Battle of Waterloo", "Battle of Agincourt", "Battle of Hastings", "Battle of Bosworth"},
+			3,
+		},
+        {
+			"What particle is exchanged in electromagnetic interactions?",
+			{"Gluon", "Photon", "W Boson", "Graviton"},
+			2,
+		},
+        {
+			"Which philosophical work begins with 'Man is born free, and everywhere he is in chains'?", 
+			{"The Social Contract", "Leviathan", "The Republic", "Candide"},
+			1,
+		},
+        {
+			"What is the primary ore of aluminum?", 
+			{"Bauxite", "Hematite", "Galena", "Cinnabar"}, 
+			1,
+		},
+        {
+			"Who was the architect of St. Paul's Cathedral in London?", 
+			{"Inigo Jones", "Christopher Wren", "John Vanbrugh", "Nicholas Hawksmoor"}, 
+			2,
+		},
+        {
+			"What is the brightest star in the night sky?", 
+			{"Betelgeuse", "Rigel", "Sirius", "Vega"}, 
+			3,
+		}
     };
 
     std::string player;
