@@ -5,16 +5,24 @@
 #define TITLE "Display Rectangles"
 
 class Rectangle {
+    friend std::ostream& operator << (std::ostream&, const Rect&);
+private:
     int length, height;
 public:
     Rectangle(int l, int h) {
         length = l;
         height = h;
     }
-    int area() {
+    int area() const{
+        // the const suffix indicates that this function does not modify any property.
         return length*height;
     }
 };
+
+std::ostream& operator<<(std::ostream& out, const Rectangle& r) {
+    out << "length " << r.length << "height " << r.height << " Area " << r.Area();
+    return out; 
+}
 
 int main() {
     int length, height;
@@ -26,10 +34,10 @@ int main() {
     Rectangle rect1{length, height}, rect2{length, 2*height}, rect3{length/2, height};
     SDL_Rect sdlr1{10,10,length, height}, sdlr2{10+length+10, 10, length, 2*height}, sdlr3{10, 20+height, length/2,height};
     
-    std::cout << "Area of 1st rectangle is " << rect1.area() << std::endl;
-    std::cout << "Area of 2nd rectangle is " << rect2.area() << std::endl;
-    std::cout << "Area of 3rd rectangle is " << rect3.area() << std::endl;
-
+    std::cout << "First rectangle: " << rect1 << "\n";
+    std::cout << "Second rectangle: " << rect2 << "\n";
+    std::cout << "3rd rectangle: " << rect3 << "\n";
+    
     // initialise SDL2 subsystems
     if(SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         std::cerr << SDL_GetError() << std::endl;
