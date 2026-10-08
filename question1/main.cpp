@@ -5,7 +5,7 @@
 #define TITLE "Display Rectangles"
 
 class Rectangle {
-    friend std::ostream& operator << (std::ostream&, const Rect&);
+    friend std::ostream& operator << (std::ostream&, const Rectangle&);
 private:
     int length, height;
 public:
@@ -20,7 +20,7 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& out, const Rectangle& r) {
-    out << "length " << r.length << "height " << r.height << " Area " << r.Area();
+    out << "length " << r.length << " height " << r.height << " Area " << r.area();
     return out; 
 }
 
@@ -37,7 +37,7 @@ int main() {
     std::cout << "First rectangle: " << rect1 << "\n";
     std::cout << "Second rectangle: " << rect2 << "\n";
     std::cout << "3rd rectangle: " << rect3 << "\n";
-    
+
     // initialise SDL2 subsystems
     if(SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         std::cerr << SDL_GetError() << std::endl;
