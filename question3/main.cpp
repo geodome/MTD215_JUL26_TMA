@@ -32,13 +32,14 @@ void random_shuffle(int *arr) {
  */
 MCQ* generate_quiz(int level, MCQ* easy, MCQ* hard) {
     auto quiz = new MCQ[20];
-	int shuffle[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+	MCQ medium[20];
+	int indices[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+	random_shuffle(indices);
     switch(level) {
         case 1:
-		random_shuffle(shuffle);
         // easy quiz only takes questions from the easy bank
         for(int i=0; i<20; i++) {
-            quiz[i] = easy[shuffle[i]];
+            quiz[i] = easy[indices[i]];
         }
         return quiz;
         case 2:
@@ -46,15 +47,18 @@ MCQ* generate_quiz(int level, MCQ* easy, MCQ* hard) {
         // Set every even question from the easy bank
         // Set evry odd question from the hard bank
         for(int i=0; i<10; i++) {
-            quiz[2*i] = easy[2*i + rand() % 2];
-            quiz[2*i + 1] = hard[2*i + rand() % 2];
+            medium[2*i] = easy[2*i + rand() % 2];
+            medium[2*i + 1] = hard[2*i + rand() % 2];
+        }
+        for(int i=0; i<20; i++) {
+            quiz[i] = medium[indices[i]];
         }
         return quiz;
         case 3:
-		random_shuffle(shuffle);
+		random_shuffle(indices);
         // for difficult level, all questions are from hard bank
         for(int i=0; i<20; i++) {
-            quiz[i] = hard[shuffle[i]];
+            quiz[i] = hard[indices[i]];
         }
         return quiz;
         default:
