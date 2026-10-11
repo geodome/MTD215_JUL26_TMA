@@ -14,6 +14,15 @@ struct MCQ {
     int correct;
 };
 
+void random_shuffle(int *arr) {
+	for(int i=0; i<10; i++) {
+		int j = i + rand() % (20 - i);
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+}
+
 /**
  * This algorithm assumes we are given 2 banks of MCQs
  * The easy bank consists of 20 easy MCQs
@@ -23,11 +32,13 @@ struct MCQ {
  */
 MCQ* generate_quiz(int level, MCQ* easy, MCQ* hard) {
     auto quiz = new MCQ[20];
+	int shuffle[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
     switch(level) {
         case 1:
+		random_shuffle(shuffle);
         // easy quiz only takes questions from the easy bank
         for(int i=0; i<20; i++) {
-            quiz[i] = easy[i];
+            quiz[i] = easy[shuffle[i]];
         }
         return quiz;
         case 2:
@@ -40,9 +51,10 @@ MCQ* generate_quiz(int level, MCQ* easy, MCQ* hard) {
         }
         return quiz;
         case 3:
+		random_shuffle(shuffle);
         // for difficult level, all questions are from hard bank
         for(int i=0; i<20; i++) {
-            quiz[i] = hard[i];
+            quiz[i] = hard[shuffle[i]];
         }
         return quiz;
         default:
