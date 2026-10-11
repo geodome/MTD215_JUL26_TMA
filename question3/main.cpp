@@ -14,6 +14,9 @@ struct MCQ {
     int correct;
 };
 
+/**
+ * This algorithm randonly shuffles an array of size 20
+ */
 void random_shuffle(int *arr) {
 	for(int i=0; i<10; i++) {
 		int j = i + rand() % (20 - i);
@@ -27,8 +30,9 @@ void random_shuffle(int *arr) {
  * This algorithm assumes we are given 2 banks of MCQs
  * The easy bank consists of 20 easy MCQs
  * The hard bank consists of 20 hard MCQ
+ * The medium bank is generated from choosing 10 questions from easy bank, 10 questions from the hard bank
  * Depending on the required level (1 for easy, 2 for medium, 3 for difficult),
- * a quiz of 20 MCQ is generated from the 2 question banks.
+ * a quiz of 20 MCQ is generated from the 3 question banks.
  */
 MCQ* generate_quiz(int level, MCQ* easy, MCQ* hard) {
     auto quiz = new MCQ[20];
@@ -38,11 +42,13 @@ MCQ* generate_quiz(int level, MCQ* easy, MCQ* hard) {
     switch(level) {
         case 1:
         // easy quiz only takes questions from the easy bank
+		// apply shuffled order on the easy bank
         for(int i=0; i<20; i++) {
             quiz[i] = easy[indices[i]];
         }
         return quiz;
         case 2:
+		// create tne medkum bank
         // for mediun level, half the questions are from the easy bank, and the oher half is from the hard bank.
         // Set every even question from the easy bank
         // Set evry odd question from the hard bank
@@ -50,12 +56,14 @@ MCQ* generate_quiz(int level, MCQ* easy, MCQ* hard) {
             medium[2*i] = easy[2*i + rand() % 2];
             medium[2*i + 1] = hard[2*i + rand() % 2];
         }
+		// apply the shuffled order on the medium bank
         for(int i=0; i<20; i++) {
             quiz[i] = medium[indices[i]];
         }
         return quiz;
         case 3:
         // for difficult level, all questions are from hard bank
+		// apply the shuffled order on the hard bank
         for(int i=0; i<20; i++) {
             quiz[i] = hard[indices[i]];
         }
