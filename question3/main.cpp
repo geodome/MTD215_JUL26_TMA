@@ -55,7 +55,6 @@ MCQ* generate_quiz(int level, MCQ* easy, MCQ* hard) {
         }
         return quiz;
         case 3:
-		random_shuffle(indices);
         // for difficult level, all questions are from hard bank
         for(int i=0; i<20; i++) {
             quiz[i] = hard[indices[i]];
