@@ -1,3 +1,6 @@
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
+
 #include "formula.h"
 #include "gridwindow.h"
 #include "widgets.h"
@@ -77,13 +80,4 @@ class CalculatorApp {
     }
 };
 
-int main() {
-    try {
-        auto app = CalculatorApp();
-        app.mainloop();
-    } catch(const std::runtime_error& e) {
-        std::cerr << e.what() << "\n";
-        return 1;
-    }
-    return 0;
-}
+#endif
