@@ -1,3 +1,3 @@
 # Calculator App
 
-[Calculator App](assets/screeenshot.png)
+![Calculator App](assets/screeenshot.png)
