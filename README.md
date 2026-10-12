@@ -4,8 +4,14 @@ Solution for the TMA is provided as-is.
 
 ## Online Past Year Paper Review
 
-I will be running MTD215 Past Year Paper Review on:
-* 8-10pm, Tuesday, 3 Nov 2026.
+
+I will be running Online Past Year Paper Review on
+* MTD215: 8-10pm, Tue, 3 Nov 2026
+* MTH210: 8-10pm, Wed, 4 Nov 2026
+* ICT133: 8-10pm, Thurs, 5 Nov 2026
+* MTH105: 8-10pm, Fri, 6 Nov 2026
+* MTH109: 8-10pm, Sat, 14 Nov 2026
+* ICT162: 8-10pm, Sun, 15 Nov 2026
 
 The session will be hosted online on Microsoft Teams.
 
