@@ -16,7 +16,6 @@ class Window: public GUIObject {
     SDL_Window* gWindow;
     SDL_Renderer* gRenderer;
     std::vector<GUIObject*> objs;
-    bool quit = false;
     bool paused = false;
 
     bool sdl_init() {
@@ -70,6 +69,7 @@ class Window: public GUIObject {
         SDL_RenderPresent(gRenderer);
 
         // main loop
+        bool quit = false;
         SDL_Event e;
         do {
             // process event queue
@@ -122,10 +122,10 @@ class Window: public GUIObject {
 
     // Press Q to quit, Space to toggle pause state
     void on_keydown(SDL_Scancode sc) override {
+        SDL_Event quit{.type = SDL_QUIT};
         switch(sc) {
             case SDL_SCANCODE_Q:
-            quit = true;
-            std::cout << "quiting\n";
+            SDL_PushEvent(&quit);
             break;
             case SDL_SCANCODE_SPACE:
             paused = !paused;
