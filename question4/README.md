@@ -1,4 +1,4 @@
-# Sorite Programming
+# Sprite Programming
 
 Two implementations are provided:
 * a simple implementation (basic)
