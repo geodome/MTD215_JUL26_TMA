@@ -340,7 +340,7 @@ int main() {
     std::cout << "Enter name: ";
     std::cin >> player;
      
-    char yes = 'n';
+    char yes = 'y';
     do {
         auto level = ask_level();
         auto quiz = generate_quiz(level, easy_bank, difficult_bank);
@@ -348,9 +348,8 @@ int main() {
         delete[] quiz;
 
         std::cout << "Congrats " << player << " for scoring " << score << "\n";
-        std::cout << "Do you want to exit or continue? (y/n)? ";
-        std::cin >> yes;
-        
+        std::cout << "Do you want to continue? (y/n)? ";
+		std::cin >> yes;
     } while(yes == 'y' || yes == 'Y');
     return 0;
 }
