@@ -27,7 +27,7 @@ class BoundingBox {
     }
 
     bool operator==(const BoundingBox& other) {
-        return coord == other.coord  &&  width == other.width && height == other.height;
+        return *coord == *other.coord  &&  width == other.width && height == other.height;
     }
 };
 
